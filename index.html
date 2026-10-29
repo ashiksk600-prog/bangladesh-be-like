@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="theme-color" content="#264653">
+<title>Bangladesh Be Like</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+  <header id="hud">
+    <div class="pill">স্কোর <b id="score">0</b></div>
+    <div class="pill">সেরা <b id="best">0</b></div>
+    <div class="pill hearts" id="lives"></div>
+    <button id="btnSound" class="ibtn" aria-label="Sound">🔊</button>
+    <button id="btnPause" class="ibtn" aria-label="Pause">⏸</button>
+  </header>
+  <main id="stage">
+    <div id="frame">
+      <canvas id="game" width="400" height="640"></canvas>
+      <div id="bubble" hidden></div>
+      <div id="overlay"></div>
+    </div>
+  </main>
+  <footer id="pad">
+    <div><button data-k="l">◀</button><button data-k="r">▶</button></div>
+    <div><button data-k="u">▲</button><button data-k="d">▼</button></div>
+  </footer>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

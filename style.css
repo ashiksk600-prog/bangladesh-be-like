@@ -1,0 +1,33 @@
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent;-webkit-user-select:none;user-select:none}
+html,body{margin:0;height:100%;overflow:hidden;color:#fff;
+  font-family:'Noto Sans Bengali','Nirmala UI','Vrinda','Segoe UI',system-ui,sans-serif}
+#app{height:100dvh;display:flex;flex-direction:column;background:linear-gradient(#2a9d8f,#264653)}
+#hud{display:flex;gap:8px;align-items:center;padding:6px 10px;padding-top:max(6px,env(safe-area-inset-top))}
+.pill{background:#0005;border-radius:999px;padding:4px 12px;font-weight:700;white-space:nowrap;font-size:15px}
+.pill b{color:#ffd166}
+.hearts{color:#ff595e;margin-right:auto;letter-spacing:2px}
+.ibtn{width:38px;height:38px;border-radius:50%;border:0;background:#ffd166;font-size:18px;cursor:pointer;box-shadow:0 3px 0 #b8860b}
+.ibtn:active{transform:translateY(2px);box-shadow:0 1px 0 #b8860b}
+#stage{flex:1;min-height:0;display:flex;justify-content:center;align-items:center}
+#frame{position:relative;width:300px;height:480px;font-size:16px;border:4px solid #ffd166;border-radius:14px;overflow:hidden;box-shadow:0 8px 30px #0009;background:#000}
+canvas{width:100%;height:100%;display:block;touch-action:none}
+#bubble{position:absolute;left:5%;right:5%;top:2%;background:#fff;color:#222;border-radius:16px;padding:.45em .8em;
+  font-weight:700;text-align:center;box-shadow:0 3px 0 #0004;animation:pop .25s;pointer-events:none;line-height:1.3}
+#bubble::after{content:"";position:absolute;left:50%;bottom:-8px;margin-left:-8px;border:8px solid transparent;border-bottom:0;border-top-color:#fff}
+@keyframes pop{from{transform:scale(.6);opacity:0}to{transform:scale(1);opacity:1}}
+#overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:#000b;padding:1em}
+[hidden]{display:none!important}
+.card{text-align:center;background:linear-gradient(#e63946,#b5232f);border:4px solid #ffd166;border-radius:20px;padding:1em 1.2em;width:100%;box-shadow:0 6px 0 #0006}
+.card h1{margin:.1em 0;font-size:2em;line-height:1;color:#ffd166;text-shadow:0 3px 0 #0006;letter-spacing:1px}
+.card h2{margin:.1em 0;font-size:1.6em;color:#ffd166}
+.card p{margin:.5em 0;font-size:.95em}
+.card .how{font-size:.78em;opacity:.95;line-height:1.5}
+.card button{margin:.3em;padding:.6em 1.2em;font:inherit;font-weight:800;font-size:1.05em;border:0;border-radius:999px;background:#ffd166;color:#5a2a00;cursor:pointer;box-shadow:0 4px 0 #b8860b}
+.card button:active{transform:translateY(3px);box-shadow:0 1px 0 #b8860b}
+#pad{display:none}
+@media (pointer:coarse){
+  #pad{display:flex;justify-content:space-between;padding:6px 14px calc(10px + env(safe-area-inset-bottom))}
+  #pad div{display:flex;gap:12px}
+  #pad button{width:76px;height:76px;border-radius:50%;border:0;background:#ffd166cc;color:#5a2a00;font-size:30px;box-shadow:0 4px 0 #b8860b;touch-action:none}
+  #pad button.on{background:#fff;transform:translateY(3px);box-shadow:0 1px 0 #b8860b}
+}
